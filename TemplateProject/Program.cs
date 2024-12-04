@@ -1,12 +1,23 @@
 ﻿using System.Text.RegularExpressions;
 using System.Diagnostics;
 
+List<string> read_input(string name)
+{
+    List<string> strings = new List<string>();
+    foreach (string line in System.IO.File.ReadLines(name))
+    {
+        strings.Add(line);
+    }
+    return strings;
+}
+
 void P1()
 {
     int result = 0;
     int index = 0;
     String data = "input.txt";
-    foreach (string line in System.IO.File.ReadLines(data))
+    List<string> input = read_input(data);
+    for (int i=0; i<input.Count; i++)
     {
     }
     Console.WriteLine(result);
@@ -18,7 +29,8 @@ void P2()
     int result = 0;
     int index = 0;
     String data = "input.txt";
-    foreach (string line in System.IO.File.ReadLines(data))
+    List<string> input = read_input(data);
+    for (int i = 0; i < input.Count; i++)
     {
     }
     Console.WriteLine(result);
