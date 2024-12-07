@@ -167,7 +167,7 @@ void P2()
 {
     int result = 0;
     int index = 0;
-    String data = "input2.txt";
+    String data = "input.txt";
     int gx = 0; int gy = 0;
     List<List<int>> map = new List<List<int>>();
     List<string> input = read_input(data);
@@ -257,7 +257,7 @@ void P2()
         }
 
     }
-    print_map2(map);
+    //print_map2(map);
     List<List<int>> map2 = new List<List<int>>();
     for (int i=0; i<map.Count; i++)
     {
@@ -288,12 +288,11 @@ void P2()
                 while ((gx >= 0) && (gy >= 0) && (gx < map[0].Count) && (gy < map.Count))
                 {
                     //int test = dirn | nextdirn;
-                    if ((map[gy][gx] & dirn) == dirn)
+                    if ((map2[gy][gx] & dirn) == dirn)
                     {
                         //print_map2(map);
-                        map2[i][j] = temp;
                         result++;
-                        Console.WriteLine(i + "," + j);
+                        //Console.WriteLine(i + "," + j);
                         break;
                     }
                     switch (dirn)
@@ -354,6 +353,8 @@ void P2()
                     }
 
                 }
+
+                map2[i][j] = temp;
 
             }
         }
