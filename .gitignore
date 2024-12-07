@@ -365,4 +365,6 @@ FodyWeavers.xsd
 # Advent of Code
 input.txt
 **/input.txt
+**/input2.txt
+**/richard_results.txt
 !/TemplateProject/input.txt
