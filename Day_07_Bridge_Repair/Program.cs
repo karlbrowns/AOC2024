@@ -33,6 +33,13 @@ Int128 evaluate2(List<int> operands, Int128 operators)
     int index = 1;
     while (operators != 1)
     {
+        // nasty fix to save me trying to count in 3s for each bit pair.
+        if ((int)(operators & 3)==3)
+        {
+            result = 0;
+            break;
+
+        }
         switch ((int)(operators & 3))
         {
             case 0: result += operands[index]; break;
@@ -45,6 +52,7 @@ Int128 evaluate2(List<int> operands, Int128 operators)
                     result = Int128.Parse(s1);
                 }
                 break;
+            
         }
         operators >>= 2;
         index++;
@@ -90,6 +98,8 @@ void P1()
 }
 //189207837752840 is too high
 //189207837752840
+//189207837752840
+//189207836795655
 void P2()
 {
     Int128 result = 0;
@@ -123,6 +133,14 @@ void P2()
             if (test == values[i])
             {
                 result += values[i];
+                Console.Write(values[i] + " = ");
+                for(int j=0; j < operands[i].Count - 1; j++)
+                {
+                    Console.Write(operands[i][j]);
+                    int temp = (int)((operators >> (2 * j)) & 3);
+                    Console.Write((temp == 2) ? "||" : (temp == 1) ? "*" : "+");
+                }
+                Console.WriteLine(operands[i][operands[i].Count - 1]);
                 break;
             }
             operators = ((operators & 3) < 2) ? operators + 1 : operators + 2;
