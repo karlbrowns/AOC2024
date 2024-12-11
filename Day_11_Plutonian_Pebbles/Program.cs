@@ -126,7 +126,7 @@ Int64 calc_stones(Int64 stone, int steps)
     int length = num.Length;
     Int64 count;
     if (steps == 0) return 1;
-    if (cache.TryGetValue((stone, steps-1), out count))
+    if (cache.TryGetValue((stone, steps), out count))
     {
         return count;
     }
@@ -170,7 +170,7 @@ Int64 calc_stones(Int64 stone, int steps)
             temp2 = calc_stones(stone2, steps - 1);
             cache.Add((stone2, steps -1), temp2);
         }
-        cache.Add((stone, steps - 1), temp1 + temp2);
+        //cache.Add((stone, steps - 1), temp1 + temp2);
         return temp1 + temp2;
     }
     else
@@ -204,17 +204,20 @@ void P2()
     }
     for ( i=0 ; i < stones.Count; i++)
     {
-        result += calc_stones(stones[i], 26);
+        result += calc_stones(stones[i], 75);
         Console.WriteLine(stones[i] + ":" + result);
         
     }
+    Console.WriteLine(calc_stones(2024, 2));
+    Console.WriteLine(calc_stones(7, 4));
+    Console.WriteLine(calc_stones(7, 5));
     Console.WriteLine(result);
     Console.ReadLine();
 }
 
 Stopwatch t = new Stopwatch();
 t.Start();
-P1();
+//P1();
 t.Stop();
 Console.WriteLine("P1 took " + t.ElapsedMilliseconds/1000.0 + " seconds");
 t.Restart();
