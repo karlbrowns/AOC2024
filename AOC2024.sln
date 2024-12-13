@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_10_Hoof_It", "Day_10_Ho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_11_Plutonian_Pebbles", "Day_11_Plutonian_Pebbles\Day_11_Plutonian_Pebbles.csproj", "{C9800C98-B55E-4A6B-B272-A75806CAEDC2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_12_Garden_Groups", "Day_12_Garden_Groups\Day_12_Garden_Groups.csproj", "{CFED7664-788B-495C-BEDC-9DF93E8AC299}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_13_Claw_Contraption", "Day_13_Claw_Contraption\Day_13_Claw_Contraption.csproj", "{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66D49388-4B5F-4052-95B1-37C3C2D523DB}"
 	ProjectSection(SolutionItems) = preProject
 		new_project.py = new_project.py
@@ -92,6 +96,14 @@ Global
 		{C9800C98-B55E-4A6B-B272-A75806CAEDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9800C98-B55E-4A6B-B272-A75806CAEDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9800C98-B55E-4A6B-B272-A75806CAEDC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFED7664-788B-495C-BEDC-9DF93E8AC299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFED7664-788B-495C-BEDC-9DF93E8AC299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFED7664-788B-495C-BEDC-9DF93E8AC299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFED7664-788B-495C-BEDC-9DF93E8AC299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
