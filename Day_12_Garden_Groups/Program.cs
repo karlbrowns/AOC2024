@@ -124,22 +124,97 @@ void P1()
 
     for (int i=0; i<areas.Count; i++)
     {
-        Console.WriteLine(areas[i] + ":" + peris[i]);
+        //Console.WriteLine(areas[i] + ":" + peris[i]);
         result += areas[i] * peris[i];
     }
     Console.WriteLine(result);
     Console.ReadLine();
 }
 
+
 void P2()
 {
     int result = 0;
-    int index = 0;
     String data = "input.txt";
     List<string> input = read_input(data);
+    List<List<int>> map = new List<List<int>>();
     for (int i = 0; i < input.Count; i++)
     {
+        map.Add(new List<int>());
+        for (int j = 0; j < input[i].Length; j++)
+        {
+            map[i].Add(input[i][j]);
+        }
     }
+    List<List<List<int>>> regions = new List<List<List<int>>>();
+    Dictionary<int, int> areas = new Dictionary<int, int>();
+    Dictionary<int, int> peris = new Dictionary<int, int>();
+    Dictionary<int, int> edges = new Dictionary<int, int>();
+    int num_regions = 0;
+    int area;
+    for (int i = 0; i < map.Count; i++)
+    {
+        for (int j = 0; j < map[i].Count; j++)
+        {
+            if (map[i][j] > 0)
+            {
+                regions.Add(new List<List<int>>());
+                area = build_region(map, regions[num_regions], i, j);
+                areas.Add(num_regions, area);
+                num_regions++;
+            }
+        }
+    }
+    for (int i = 0; i < regions.Count; i++)
+    {
+        int height = map.Count + 2; int width = map[0].Count + 2;
+        int[,] perimeter = new int[height + 2, width + 2];
+        for (int j = 0; j < regions[i].Count; j++)
+        {
+            perimeter[regions[i][j][0] + 1, regions[i][j][1] + 1] = 1;
+        }
+        int corner = 0;
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                if (perimeter[y, x] == 1)
+                {
+                    if ((perimeter[y - 1, x] == 0) && (perimeter[y, x - 1] == 0)) corner++;
+                    if ((perimeter[y, x - 1] == 0) && (perimeter[y + 1, x] == 0)) corner++;
+                    if ((perimeter[y + 1, x] == 0) && (perimeter[y, x + 1] == 0)) corner++;
+                    if ((perimeter[y, x + 1] == 0) && (perimeter[y - 1, x] == 0)) corner++;
+
+                    if ((perimeter[y - 1, x] == 1) && (perimeter[y, x + 1] == 1) && (perimeter[y - 1, x + 1] == 0)) corner++;
+                    if ((perimeter[y, x + 1] == 1) && (perimeter[y + 1, x] == 1) && (perimeter[y + 1, x + 1] == 0)) corner++;
+                    if ((perimeter[y + 1, x] == 1) && (perimeter[y, x - 1] == 1) && (perimeter[y + 1, x - 1] == 0)) corner++;
+                    if ((perimeter[y, x - 1] == 1) && (perimeter[y - 1, x] == 1) && (perimeter[y - 1, x - 1] == 0)) corner++;
+
+                    //Console.Write('#');
+                }
+                //else Console.Write('.');
+            }
+  //          Console.WriteLine();
+        }
+        edges.Add(i, corner);
+        //peris.Add(i, peri);
+        //for (int y =0; y<height; y++)
+        //{
+        //    for (int x = 0; x<width; x++)
+        //    {
+        //        if (perimeter[y, x] == -1) Console.Write("#");
+        //        else if (perimeter[y, x] == 1) Console.Write("A");
+        //        else Console.Write('.');
+        //    }
+        //    Console.WriteLine();
+        //}
+    }
+    for (int i = 0; i < areas.Count; i++)
+    {
+        Console.WriteLine(areas[i] + ":" + edges[i]);
+        result += areas[i] * edges[i];
+    }
+
     Console.WriteLine(result);
     Console.ReadLine();
 }
