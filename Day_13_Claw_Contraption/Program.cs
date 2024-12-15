@@ -94,6 +94,7 @@ void P1()
             }
             result += test;
         }
+        if (possibles.Count > 1) Console.WriteLine("Possibles: " + possibles.Count);
     }
     Console.WriteLine(result);
     Console.ReadLine();
@@ -101,17 +102,99 @@ void P1()
 
 void P2()
 {
-    int result = 0;
+    Int128 result = 0;
     int index = 0;
     String data = "input.txt";
+    char[] split = { ',', '+' };
+    char[] split2 = { '=', ',' };
+    List<List<Int128>> abtn = new List<List<Int128>>();
+    List<List<Int128>> bbtn = new List<List<Int128>>();
+    List<List<Int128>> results = new List<List<Int128>>();
     List<string> input = read_input(data);
     for (int i = 0; i < input.Count; i++)
     {
+        if ((i % 4) == 0)
+        {
+            abtn.Add(new List<Int128>());
+            string[] nums = input[i].Split(split, StringSplitOptions.RemoveEmptyEntries);
+            Int64 x = Int64.Parse(nums[1]);
+            Int64 y = Int64.Parse(nums[3]);
+            abtn[index].Add(x);
+            abtn[index].Add(y);
+        }
+        if ((i % 4) == 1)
+        {
+            bbtn.Add(new List<Int128>());
+            string[] nums = input[i].Split(split, StringSplitOptions.RemoveEmptyEntries);
+            Int64 x = Int64.Parse(nums[1]);
+            Int64 y = Int64.Parse(nums[3]);
+            bbtn[index].Add(x);
+            bbtn[index].Add(y);
+        }
+        if ((i % 4) == 2)
+        {
+            results.Add(new List<Int128>());
+            string[] nums = input[i].Split(split2, StringSplitOptions.RemoveEmptyEntries);
+            Int64 x = Int64.Parse(nums[1]);
+            Int64 y = Int64.Parse(nums[3]);
+            results[index].Add(10000000000000 + x);
+            results[index].Add(10000000000000 + y);
+        }
+        if ((i % 4) == 3) index++;
+    }
+    Int128 rx, ry, diffx, diffy, ajump=1, bjump=1;
+    List<List<Int128>> possibles = new List<List<Int128>>();
+    index = 0;
+    for (int i = 0; i < results.Count; i++)
+    {
+        possibles.Clear();
+        index = 0;
+        Console.WriteLine(i);
+        Int128 apress = 0; Int128 bpress = 0;
+        
+        rx = results[i][0];
+        ry = results[i][1];
+        Int128 x1, y1, x2, y2;
+        x1 = abtn[i][0];
+        x2 = bbtn[i][0];
+        y1 = abtn[i][1];
+        y2 = bbtn[i][1];
+        Int128 dividend = x1 * ry - y1 * rx;
+        Int128 divisor = y2 * x1 - x2 * y1;
+        if ((dividend % divisor)==0)
+        {
+            bpress = dividend / divisor;
+            if (bpress > 0)
+            {
+                apress = (rx - bpress * x2);
+                if ((apress % x1) == 0)
+                {
+                    apress = apress / x1;
+                    if (apress > 0)
+                    {
+                        possibles.Add(new List<Int128> { apress, bpress });
+                    }
+                }
+            }
+        }
+        if (possibles.Count > 0)
+        {
+            Int128 test = possibles[0][0] * 3 + possibles[0][1];
+            for (int j = 1; j < possibles.Count; j++)
+            {
+                if (possibles[j][0] * 3 + possibles[j][1] < test)
+                {
+                    test = possibles[j][0] * 3 + possibles[j][1];
+                }
+            }
+            result += test;
+        }
     }
     Console.WriteLine(result);
     Console.ReadLine();
 }
-
+//134667349543534 too high
+//92827349540204
 Stopwatch t = new Stopwatch();
 t.Start();
 P1();
