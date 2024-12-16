@@ -33,6 +33,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_12_Garden_Groups", "Day
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_13_Claw_Contraption", "Day_13_Claw_Contraption\Day_13_Claw_Contraption.csproj", "{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_14_Restroom_Redoubt", "Day_14_Restroom_Redoubt\Day_14_Restroom_Redoubt.csproj", "{0CE0CEFB-2BE1-4961-87FD-481FE35C00C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_15_Warehouse_Woes", "Day_15_Warehouse_Woes\Day_15_Warehouse_Woes.csproj", "{3DBB49A8-1B09-4826-8DC0-093EFC7B4162}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_16_Reindeer_Maze", "Day_16_Reindeer_Maze\Day_16_Reindeer_Maze.csproj", "{0BC7CB45-3F9F-4A79-B703-B73BE08D8D74}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66D49388-4B5F-4052-95B1-37C3C2D523DB}"
 	ProjectSection(SolutionItems) = preProject
 		new_project.py = new_project.py
@@ -104,6 +110,18 @@ Global
 		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FBB3A3C-C302-4018-A3E9-F6F6634A13CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE0CEFB-2BE1-4961-87FD-481FE35C00C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE0CEFB-2BE1-4961-87FD-481FE35C00C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE0CEFB-2BE1-4961-87FD-481FE35C00C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE0CEFB-2BE1-4961-87FD-481FE35C00C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBB49A8-1B09-4826-8DC0-093EFC7B4162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBB49A8-1B09-4826-8DC0-093EFC7B4162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBB49A8-1B09-4826-8DC0-093EFC7B4162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBB49A8-1B09-4826-8DC0-093EFC7B4162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC7CB45-3F9F-4A79-B703-B73BE08D8D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC7CB45-3F9F-4A79-B703-B73BE08D8D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC7CB45-3F9F-4A79-B703-B73BE08D8D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC7CB45-3F9F-4A79-B703-B73BE08D8D74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
