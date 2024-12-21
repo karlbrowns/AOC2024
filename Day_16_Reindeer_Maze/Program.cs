@@ -15,7 +15,7 @@ List<string> read_input(string name)
 void move(int x, int y, int[,] map, int dirn, int[,,] cost, int endx, int endy)
 {
     if ((x==endx) && (y==endy)) return;
-    //Console.WriteLine(x + "," + y);
+    //Console.WriteLine(x + "," + y + ":" + cost[x,y,dirn]);
     //print_map(map, cost, 15 , 15);
 
     int endscore = int.MaxValue;
@@ -135,7 +135,7 @@ void move(int x, int y, int[,] map, int dirn, int[,,] cost, int endx, int endy)
             }
             if (map[x - 1, y] == 0)
             {
-                if (((cost[x - 1, y, 0] > 0) && (cost[x - 1, y, 3] > cost[x, y, dirn] + 1)) || (cost[x, y + 1, 3] == 0))
+                if (((cost[x - 1, y, 3] > 0) && (cost[x - 1, y, 3] > cost[x, y, dirn] + 1)) || (cost[x - 1, y, 3] == 0))
                 {
                     cost[x - 1, y, 3] = cost[x, y, dirn] + 1;
                     move(x - 1, y, map, 3, cost, endx, endy);
