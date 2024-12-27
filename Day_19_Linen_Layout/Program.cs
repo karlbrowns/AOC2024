@@ -104,11 +104,11 @@ void P2()
     for (int i = 2; i < input.Count; i++)
     {
         test2(input[i], ref result);
-        for (int j=2; j<towels.Length; j++)
+        for (int j=0; j<towels.Length; j++)
         {
-            if (cache2.TryGetValue((input[i],j), out b2))
+            if (cache3.TryGetValue((input[i],j), out res))
             {
-                if (b2) r2 += cache3[(input[i], j)];
+                r2 += cache3[(input[i], j)];
             }
         }
         Console.Write(i - 2 + ",");
