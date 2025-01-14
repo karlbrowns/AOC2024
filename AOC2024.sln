@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_18_RAM_Run", "Day_18_RA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_19_Linen_Layout", "Day_19_Linen_Layout\Day_19_Linen_Layout.csproj", "{88174F16-B58A-429C-A94D-AF60F963A2A6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day_20_Race_Condition", "Day_20_Race_Condition\Day_20_Race_Condition.csproj", "{10DF4CD6-E6FC-4FFE-AD9B-85BC314159AF}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66D49388-4B5F-4052-95B1-37C3C2D523DB}"
 	ProjectSection(SolutionItems) = preProject
 		new_project.py = new_project.py
