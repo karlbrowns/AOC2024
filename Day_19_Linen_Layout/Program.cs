@@ -76,7 +76,11 @@ bool test2(string t, ref Int64 total)
                 cache2.Add((t, j), result);
                 cache3.Add((t, j), total2);
             }
-            if (result) total += total2;
+            if (total2 > 0)
+            {
+                total += total2;
+                total2 = 0;
+            }
         }
         else
         {
@@ -96,7 +100,7 @@ void P2()
     bool b = false;
     ref bool b2 = ref b;
     int index = 0;
-    String data = "input_tst.txt";
+    String data = "input.txt";
     List<string> input = read_input(data);
     towels = input[0].Split(", ", StringSplitOptions.RemoveEmptyEntries);
     Array.Sort(towels);
